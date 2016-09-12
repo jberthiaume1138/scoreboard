@@ -15,6 +15,14 @@ ScoreBoard.prototype.processData = function(data) {
         console.log(game);
         $('#results').append('<p>' + game.id + '</p>');
     });
+
+    var source = $('#scoreboard-template').html();
+    var template = Handlebars.compile(source);
+
+    var context = {gameID:"123456"};
+    var html = template(context);
+
+    $('#thing').html(html);
 };
 
 ScoreBoard.prototype.getData = function() {

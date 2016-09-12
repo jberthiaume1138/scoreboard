@@ -1,14 +1,30 @@
 {
   "name": "scoreboard",
   "version": "1.0.0",
-  "description": "",
+  "description": "Baseball scoreboard - small",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "start": "node server.js"
   },
   "author": "JAB",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0"
-  }
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jberthiaume1138/scoreboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jberthiaume1138/scoreboard/issues"
+  },
+  "homepage": "https://github.com/jberthiaume1138/scoreboard#readme"
 }

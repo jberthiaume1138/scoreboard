@@ -6,14 +6,13 @@ var ScoreBoard = function(dataURL) {
 };
 
 ScoreBoard.prototype.processData = function(data) {
-    this.scores = data;
     console.log(this.scores);
 
-    var myData = data.sports[0].leagues[0].events;
-    console.log(myData);
-    console.log('Number of games: ' + myData.length);
+    var competitions = data.sports[0].leagues[0].events;
+    console.log('Number of games: ' + competitions.length);
 
-    myData.forEach(function(game){
+    competitions.forEach(function(game){
+        console.log(game);
         $('#results').append('<p>' + game.id + '</p>');
     });
 };

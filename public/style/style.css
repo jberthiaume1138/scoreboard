@@ -19,7 +19,16 @@
 
 .competitions {
     display: flex;
-    flex-flow: row wrap;       /* Auto wraps to column for small width */
+    flex-flow: row;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+@media all and (max-width: 770px) {
+    .competitions {
+        flex-flow: column;
+    }
 }
 
 .competition {
@@ -31,7 +40,16 @@
     height: 66px;
 }
 
+@media all and (max-width: 770px) {
+    .competition {
+        width: 100%;
+        padding: 0 0.35em;
+    }
+}
 
+.status {
+    font-size: .7em;
+}
 
 .scheduled-datetime{
     font-size: .85em;

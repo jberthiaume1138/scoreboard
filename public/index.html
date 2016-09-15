@@ -27,7 +27,9 @@
                         <div>
                             <div class="status">
                             {{#ifCond this.status.id 1}}
-                                <div><time class="scheduled-datetime" datetime="{{this.status.detail}}">{{this.status.detail}}</time></div>
+                                <div>
+                                    <time class="scheduled-datetime" datetime="{{this.status.detail}}">{{this.status.detail}}</time>
+                                </div>
                             {{else}}
                                 {{#ifCond this.status.id 2}}
                                     <div>{{this.status.detail}}</div>
@@ -39,7 +41,10 @@
                         </div>
                         <div class="teams">
                             {{#each this.competitors}}
-                                <div>{{this.team.abbreviation}} <span class="record">({{this.team.record.summary}})</span></div>
+                                <div data-teamid="{{this.team.id}}">
+                                        <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
+                                    <span class="record">({{this.team.record.summary}})</span>
+                                </div>
                             {{/each}}
                         </div>
                     {{/each}}

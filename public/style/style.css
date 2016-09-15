@@ -53,11 +53,12 @@
 }
 
 .status {
-    font-size: .7em;
+    font-size: 0.7em;
+    padding-bottom: 0.5em;
 }
 
 .scheduled-datetime{
-    font-size: .85em;
+    font-size: 0.85em;
     color: black;
 }
 
@@ -66,10 +67,16 @@
     flex-flow: column-reverse;
 }
 
+.team-link {
+    text-decoration: none;
+}
+
 .record {
-    font-size: .75em;
+    padding-left: 0.25em;
+    font-size: 0.65em;
     color: gray;
 }
+
 
 
 

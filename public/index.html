@@ -22,33 +22,26 @@
             <ul class="competitions">
                 {{#each events}}
                 <li class="competition" data-id="{{id}}">
-                    {{this.season.year}}
-                    {{this.season.description}}
-                    <div class="comp-detail">
-                        {{#each this.competitions}}
-                            <div>
-                                {{this.period}}
-                                {{this.status.detail}}
-                                <div class="teams">
-                                    {{#each this.competitors}}
-                                        <p>{{this.homeAway}}</p>
-                                        <p>{{this.team.abbreviation}}</p>
-                                        <p>({{this.team.record.summary}})</p>
-                                    {{/each}}
-                                    <h3>{{this.stats.attendance}}</h3>
-                                </div>
-                                {{#ifCond this.status.id 1}}
-                                    <h4>Scheduled</h4>
+                    {{#each this.competitions}}
+                        <div>
+                            <div class="status">
+                            {{#ifCond this.status.id 1}}
+                                <div><time class="scheduled-datetime" datetime="{{this.status.detail}}">{{this.status.detail}}</time></div>
+                            {{else}}
+                                {{#ifCond this.status.id 2}}
+                                    <div>{{this.status.detail}}</div>
                                 {{else}}
-                                    {{#ifCond this.status.id 2}}
-                                        <h4>In Progress</h4>
-                                    {{else}}
-                                        <h4>Done</h4>
-                                    {{/ifCond}}
+                                    <div>{{this.status.detail}}</div>
                                 {{/ifCond}}
+                            {{/ifCond}}
                             </div>
-                        {{/each}}
-                    </div>
+                        </div>
+                        <div class="teams">
+                            {{#each this.competitors}}
+                                <div>{{this.team.abbreviation}} <span class="record">({{this.team.record.summary}})</span></div>
+                            {{/each}}
+                        </div>
+                    {{/each}}
                     <div>
                         {{competitions.competitors.homeAway}}
                     </div>

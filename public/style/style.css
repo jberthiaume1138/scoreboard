@@ -33,6 +33,21 @@
 
 }
 
+.scheduled-datetime{
+    font-size: .85em;
+    color: black;
+}
+
+.teams {
+    display: flex;
+    flex-flow: column-reverse;
+}
+
+.record {
+    font-size: .75em;
+    color: gray;
+}
+
 
 
 .scheduled {

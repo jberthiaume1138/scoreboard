@@ -11,10 +11,6 @@ ScoreBoard.prototype.processData = function(data) {
     // var competitions = data.sports[0].leagues[0].events;
     var competitions = data.sports[0].leagues[0];
     console.log(competitions);
-    // competitions.forEach(function(game){
-    //     console.log(game);
-    //     $('#results').append('<p>' + game.id + '</p>');
-    // });
 
     var source = $('#scoreboard-template').html();
     var template = Handlebars.compile(source);
@@ -24,6 +20,10 @@ ScoreBoard.prototype.processData = function(data) {
             return options.fn(this);
         }
         return options.inverse(this);
+    });
+
+    Handlebars.registerHelper('dateTimeFormat', function(date, format) {
+        return moment(date).format(format);
     });
 
     var context = competitions;

@@ -22,6 +22,7 @@
             <ul class="competitions">
                 {{#each events}}
                 <li class="competition" data-id="{{id}}">
+                    <div class="wrapper">
                     {{#each this.competitions}}
                         <div>
                             <div class="status">
@@ -42,11 +43,10 @@
                             {{/each}}
                         </div>
                     {{/each}}
-                    <div>
-                        {{competitions.competitors.homeAway}}
                     </div>
                 </li>
                 {{/each}}
+            </ul>
         </div>
     </script>
 </body>

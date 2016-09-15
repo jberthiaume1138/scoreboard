@@ -12,6 +12,10 @@ app.get('/data', function(req, res) {
     res.send(mlb);
 });
 
+app.get('/', function(req, res) {
+    res.send(public);
+});
+
 var port = 8080;
 app.listen(port, function(){
     console.log('Listening on ' + port);

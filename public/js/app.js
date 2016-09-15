@@ -6,23 +6,30 @@ var ScoreBoard = function(dataURL) {
 };
 
 ScoreBoard.prototype.processData = function(data) {
-    console.log(this.scores);
+    // console.log(this.scores);
 
-    var competitions = data.sports[0].leagues[0].events;
-    console.log('Number of games: ' + competitions.length);
-
-    competitions.forEach(function(game){
-        console.log(game);
-        $('#results').append('<p>' + game.id + '</p>');
-    });
+    // var competitions = data.sports[0].leagues[0].events;
+    var competitions = data.sports[0].leagues[0];
+    console.log(competitions);
+    // competitions.forEach(function(game){
+    //     console.log(game);
+    //     $('#results').append('<p>' + game.id + '</p>');
+    // });
 
     var source = $('#scoreboard-template').html();
     var template = Handlebars.compile(source);
 
-    var context = {gameID:"123456"};
+    Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+        if(v1 === v2) {
+            return options.fn(this);
+        }
+        return options.inverse(this);
+    });
+
+    var context = competitions;
     var html = template(context);
 
-    $('#thing').html(html);
+    $('#scoreboard').html(html);
 };
 
 ScoreBoard.prototype.getData = function() {

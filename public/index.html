@@ -14,20 +14,47 @@
 </head>
 <body>
     <section id="scoreboard">
-        <div class="league">
-            <div id="results" class="competition"></div>
-        </div>
     </section>
 
-    <div id="thing">
-        
-    </div>
-
     <script id="scoreboard-template" type="text/x-handlebars-template">
-        <div class=scoreboard>
-            <h2>{{gameID}}</h2>
+        <div class="league">
+            <h2>{{abbreviation}}</h2>
+            <ul class="competitions">
+                {{#each events}}
+                <li class="competition" data-id="{{id}}">
+                    {{this.season.year}}
+                    {{this.season.description}}
+                    <div class="comp-detail">
+                        {{#each this.competitions}}
+                            <div>
+                                {{this.period}}
+                                {{this.status.detail}}
+                                <div class="teams">
+                                    {{#each this.competitors}}
+                                        <p>{{this.homeAway}}</p>
+                                        <p>{{this.team.abbreviation}}</p>
+                                        <p>({{this.team.record.summary}})</p>
+                                    {{/each}}
+                                    <h3>{{this.stats.attendance}}</h3>
+                                </div>
+                                {{#ifCond this.status.id 1}}
+                                    <h4>Scheduled</h4>
+                                {{else}}
+                                    {{#ifCond this.status.id 2}}
+                                        <h4>In Progress</h4>
+                                    {{else}}
+                                        <h4>Done</h4>
+                                    {{/ifCond}}
+                                {{/ifCond}}
+                            </div>
+                        {{/each}}
+                    </div>
+                    <div>
+                        {{competitions.competitors.homeAway}}
+                    </div>
+                </li>
+                {{/each}}
         </div>
     </script>
-
 </body>
 </html>

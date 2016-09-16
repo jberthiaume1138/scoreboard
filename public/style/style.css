@@ -11,47 +11,38 @@
 #scoreboard {
     max-width: 970px;
     max-height: 66px;
-    background-color: white;
     margin: 0;
     padding: 0;
     border: 0;
-}
-
-.competitions {
     display: flex;
     flex-flow: row;
-    padding: 0;
-    margin: 0;
-    border: 0;
 }
 
 @media all and (max-width: 770px) {
-    .competitions {
+    #scoreboard {
         flex-flow: column;
     }
 }
 
 .competition {
-    list-style: none;
-    padding: 0.5em;
+    padding: 0.3em;
     background-color: #D9D9D9;
     margin: 1px;
+    min-width: 115px;
+    min-height: 66px;
 }
 
 @media all and (max-width: 770px) {
-    .competition {
+    #scoreboard {
         width: 100%;
         padding: 0 0.35em;
     }
 }
 
-.wrapper {
-    width: 115px;
-    height: 66px;
-    padding: 0;
-    margin: 0;
+.inner {
+    display: flex;
+    flex-direction: row;
 }
-
 .status {
     font-size: 0.7em;
     padding-bottom: 0.5em;
@@ -65,6 +56,7 @@
 .teams {
     display: flex;
     flex-flow: column-reverse;
+    font-size: 0.8em;
 }
 
 .team-link {
@@ -73,8 +65,15 @@
 
 .record {
     padding-left: 0.25em;
-    font-size: 0.65em;
+    font-size: 0.60em;
     color: gray;
+}
+
+.pitchers {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.25em;
+    font-size: 0.70em;
 }
 
 

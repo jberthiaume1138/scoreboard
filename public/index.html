@@ -18,46 +18,71 @@
     </section>
 
     <script id="scoreboard-template" type="text/x-handlebars-template">
-        <div class="league">
-            <h2>{{abbreviation}}</h2>
-            <ul class="competitions">
-                {{#each events}}
-                <li class="competition" data-id="{{id}}">
-                    <div class="wrapper">
-                    {{#each this.competitions}}
-                        <div>
-                            <div class="status">
-                            {{#ifCond this.status.id 1}}
-                                <div>
-                                    <time class="scheduled-datetime" datetime="{{this.status.detail}}">
-                                        {{#dateTimeFormat this.status.detail 'LT'}}
-
-                                        {{/dateTimeFormat}}
-                                    </time>
-                                </div>
-                            {{else}}
-                                {{#ifCond this.status.id 2}}
-                                    <div>{{this.status.detail}}</div>
-                                {{else}}
-                                    <div>{{this.status.detail}}</div>
-                                {{/ifCond}}
-                            {{/ifCond}}
+        {{#each events}}
+            <div class="competition" data-id="{{id}}">
+                {{#each this.competitions}}
+                    {{#ifCond this.status.id 1}}
+                        <div class="status">
+                            <time class="scheduled-datetime" datetime="{{this.status.detail}}">{{#dateTimeFormat this.status.detail 'LT'}}{{/dateTimeFormat}}</time>
+                        </div>
+                        <div class="inner">
+                            <div class="teams">
+                                {{#each this.competitors}}
+                                    <div data-teamid="{{this.team.id}}">
+                                        <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
+                                        <span class="record">({{this.team.record.summary}})</span>
+                                    </div>
+                                {{/each}}
+                            </div>
+                            <div class="pitchers">
+                                <div>{{stats.awayStartingPitcher.athlete.lastName}}</div>
+                                <div>{{stats.homeStartingPitcher.athlete.lastName}}</div>
                             </div>
                         </div>
-                        <div class="teams">
-                            {{#each this.competitors}}
-                                <div data-teamid="{{this.team.id}}">
-                                        <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
-                                    <span class="record">({{this.team.record.summary}})</span>
+                    {{else}}
+                        {{#ifCond this.status.id 2}}
+                            <div class="status">
+                                {{this.status.detail}}
+                            </div>
+                            <div class="inner">
+                                <div class="teams">
+                                    {{#each this.competitors}}
+                                        <div data-teamid="{{this.team.id}}">
+                                            <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
+                                            <span class="record">({{this.team.record.summary}})</span>
+                                        </div>
+                                    {{/each}}
                                 </div>
-                            {{/each}}
-                        </div>
-                    {{/each}}
-                    </div>
-                </li>
+                                <div>
+                                    state
+                                </div>
+                            </div>
+                        {{else}}
+                            <div class="status">
+                                {{this.status.detail}}
+                            </div>
+                            <div class="inner">
+                                <div class="teams">
+                                    {{#each this.competitors}}
+                                        <div data-teamid="{{this.team.id}}">
+                                            <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
+                                        </div>
+                                    {{/each}}
+                                </div>
+                                <div class="pitchers">
+                                    W: {{./stats.winningPitcher.lastName}}
+                                    L: {{./stats.losingPitcher.lastName}}
+                                    S: {{./stats.savingPitcher.lastName}}
+                                </div>
+                            </div>
+                        {{/ifCond}}
+                    {{/ifCond}}
                 {{/each}}
-            </ul>
-        </div>
+            </div>
+        {{/each}}
     </script>
+
+
+
 </body>
 </html>

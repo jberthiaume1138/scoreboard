@@ -4,8 +4,7 @@
   "description": "Baseball scoreboard - small",
   "main": "server.js",
   "scripts": {
-    "test": "mocha",
-    "start": "node server.js"
+    "test": "mocha"
   },
   "author": "JAB",
   "license": "ISC",

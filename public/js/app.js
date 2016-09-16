@@ -47,4 +47,8 @@ $('document').ready(function() {
     var board = new ScoreBoard(dataURL);
 
     board.getData();
+
+    $('#scoreboard').slick({
+
+    });
 });

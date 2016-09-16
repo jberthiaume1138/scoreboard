@@ -5,3 +5,6 @@ This application accepts deep JSON data which represents a snapshot of a day's M
 In the interests of ease of use, and to demonstrate a more real world approach to accessing the data, the provided JSON data is exposed by a Node.js/Express API. This data can be viewed via the /data route. The default route is the front end, which consumes the JSON with an AJAX call to the API.
 
 The entire application is deployed to a dyno on Heroku. https://vast-sands-47376.herokuapp.com/
+
+TODO:
+1. Add scroller/paginate effect for full size screens.

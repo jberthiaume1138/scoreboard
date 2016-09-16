@@ -6,6 +6,8 @@
     <title>Scoreboard</title>
     <link rel="stylesheet" type="text/css" href="style/normalize.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -14,7 +16,7 @@
     <script type="text/javascript" src="js/app.js"></script>
 </head>
 <body>
-    <section id="scoreboard">
+    <section id="scoreboard" class="scroll">
     </section>
 
     <script id="scoreboard-template" type="text/x-handlebars-template">
@@ -29,12 +31,14 @@
                             <div class="teams">
                                 {{#each this.competitors}}
                                     <div data-teamid="{{this.team.id}}">
-                                        <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
-                                        <span class="record">({{this.team.record.summary}})</span>
+                                        <div class="team-name">
+                                            <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
+                                            <span class="record">({{this.team.record.summary}})</span>
+                                        </div>
                                     </div>
                                 {{/each}}
                             </div>
-                            <div class="pitchers">
+                            <div class="pitchers hidden">
                                 <div>{{stats.awayStartingPitcher.athlete.lastName}}</div>
                                 <div>{{stats.homeStartingPitcher.athlete.lastName}}</div>
                             </div>
@@ -42,15 +46,18 @@
                     {{else}}
                         {{#ifCond this.status.id 2}}
                             <div class="status">
-                                {{this.status.detail}}
+                                <span class="in-progress">{{this.status.detail}}</span>
                             </div>
                             <div class="inner">
                                 <div class="teams">
                                     {{#each this.competitors}}
-                                        <div data-teamid="{{this.team.id}}">
-                                            <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
+                                        <div class="team-ind" data-teamid="{{this.team.id}}">
+                                            <div class="team-name">
+                                                <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
+                                            </div>
                                             <span class="score">{{this.score}}</span>
                                         </div>
+
                                     {{/each}}
                                 </div>
                                 <div>
@@ -64,12 +71,14 @@
                             <div class="inner">
                                 <div class="teams">
                                     {{#each this.competitors}}
-                                        <div class="team" data-teamid="{{this.team.id}}">
-                                            <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
+                                        <div class="team-ind" data-teamid="{{this.team.id}}">
+                                            <div class="team-name">
+                                                <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
+                                            </div>
                                             {{#if this.isWinner}}
-                                                <span class="score"><em>{{this.score}}</em></span>
+                                                <div><span class="score"><em>{{this.score}}</em></span></div>
                                             {{else}}
-                                                <span class="score">{{this.score}}</span>
+                                                <div><span class="score">{{this.score}}</span></div>
                                             {{/if}}
                                         </div>
                                     {{/each}}
@@ -90,6 +99,6 @@
     </script>
 
 
-
+<script type="text/javascript" src="js/slick/slick.min.js"></script>
 </body>
 </html>

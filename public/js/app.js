@@ -42,7 +42,7 @@ ScoreBoard.prototype.getData = function() {
 };
 
 $('document').ready(function() {
-    var dataURL = 'http://127.0.0.1:8080/data/';
+    var dataURL = '/data/';
 
     var board = new ScoreBoard(dataURL);
 

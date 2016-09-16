@@ -72,13 +72,20 @@
                                 <div class="teams">
                                     {{#each this.competitors}}
                                         <div class="team-ind" data-teamid="{{this.team.id}}">
-                                            <div class="team-name">
-                                                <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
-                                            </div>
                                             {{#if this.isWinner}}
-                                                <div><span class="score"><em>{{this.score}}</em></span></div>
+                                                <div class="team-name">
+                                                    <a class="team-link winner" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
+                                                </div>
+                                                <div>
+                                                    <span class="score winner">{{this.score}}</span>
+                                                </div>
                                             {{else}}
-                                                <div><span class="score">{{this.score}}</span></div>
+                                                <div class="team-name">
+                                                    <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
+                                                </div>
+                                                <div>
+                                                    <span class="score">{{this.score}}</span>
+                                                </div>
                                             {{/if}}
                                         </div>
                                     {{/each}}

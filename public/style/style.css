@@ -90,6 +90,10 @@
     /*margin-left: auto;*/
 }
 
+.winner {
+    font-weight: bolder;
+}
+
 .pitchers {
     display: flex;
     flex-direction: column;

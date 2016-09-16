@@ -49,12 +49,12 @@
                                     {{#each this.competitors}}
                                         <div data-teamid="{{this.team.id}}">
                                             <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
-                                            <span class="record">({{this.team.record.summary}})</span>
+                                            <span class="score">{{this.score}}</span>
                                         </div>
                                     {{/each}}
                                 </div>
                                 <div>
-                                    state
+
                                 </div>
                             </div>
                         {{else}}

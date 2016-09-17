@@ -70,7 +70,7 @@
                                     {{#each this.competitors}}
                                         <div class="team-ind" data-teamid="{{this.team.id}}">
                                             {{#if this.isWinner}}
-                                                <div class="team-name">
+                                                <div class="team-name winner">
                                                     <a class="team-link winner" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
                                                 </div>
                                                 <div>
@@ -87,11 +87,11 @@
                                         </div>
                                     {{/each}}
                                 </div>
-                                <div class="pitchers final">
-                                    <p>W: {{this.stats.winningPitcher.athlete.lastName}}</p>
-                                    <p>L: {{this.stats.losingPitcher.athlete.lastName}}</p>
+                                <div class="pitchers">
+                                    <p><span>W:</span> {{this.stats.winningPitcher.athlete.lastName}}</p>
+                                    <p><span>L:</span> {{this.stats.losingPitcher.athlete.lastName}}</p>
                                     {{#if this.stats.savingPitcher}}
-                                        <p>S: {{this.stats.savingPitcher.athlete.lastName}}</p>
+                                        <p><span>S:</span> {{this.stats.savingPitcher.athlete.lastName}}</p>
                                     {{/if}}
                                 </div>
                             </div>

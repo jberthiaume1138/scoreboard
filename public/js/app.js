@@ -37,10 +37,20 @@ ScoreBoard.prototype.getData = function() {
 };
 
 $('document').ready(function() {
-    
+
     var dataURL = '/data/';
 
     var board = new ScoreBoard(dataURL);
 
     board.getData();
+
+
+    $('#scoreboard').on('mouseover','.competition', function() {
+        console.log('hover over competition');
+
+    });
+
+    // $('#scoreboard').slick({
+    //
+    // });
 });

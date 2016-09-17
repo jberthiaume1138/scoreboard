@@ -90,14 +90,11 @@
 }
 
 .winner {
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 .pitchers {
-    display: flex;
-    flex-direction: column;
-    padding-left: 5em;
-    font-size: 0.70em;
+    display: none;
 }
 
 .pitchers p {
@@ -106,21 +103,15 @@
     border: 0:
 }
 
-.final {
-    display: none;
-}
-
-.hidden {
-    display: none;
+.pitchers span {
+    color: #8C8C8C;
 }
 
 @media all and (max-width: 770px) {
-    .team {
-        justify-content:
-    }
-    .final {
-        display:flex;
+    .pitchers {
+        display: flex;
         flex-direction: column;
-        padding-left: 1em;
+        padding-left: 5em;
+        font-size: 0.70em;
     }
 }

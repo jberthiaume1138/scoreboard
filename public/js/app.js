@@ -6,12 +6,8 @@ var ScoreBoard = function(dataURL) {
 };
 
 ScoreBoard.prototype.processData = function(data) {
-    // console.log(this.scores);
 
-    // var competitions = data.sports[0].leagues[0].events;
     var competitions = data.sports[0].leagues[0];
-    console.log(competitions);
-
     var source = $('#scoreboard-template').html();
     var template = Handlebars.compile(source);
 
@@ -33,7 +29,6 @@ ScoreBoard.prototype.processData = function(data) {
 };
 
 ScoreBoard.prototype.getData = function() {
-    var promiseScores = $.Deferred();
     $.getJSON(this.dataURL)
         .done(this.processData.bind(this))
         .fail(function(){
@@ -42,13 +37,10 @@ ScoreBoard.prototype.getData = function() {
 };
 
 $('document').ready(function() {
+    
     var dataURL = '/data/';
 
     var board = new ScoreBoard(dataURL);
 
     board.getData();
-
-    $('#scoreboard').slick({
-
-    });
 });

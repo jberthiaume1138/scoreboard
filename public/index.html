@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
     <title>Scoreboard</title>
+
     <link rel="stylesheet" type="text/css" href="style/normalize.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
-    <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,800" rel="stylesheet">
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -38,8 +40,8 @@
                                 {{/each}}
                             </div>
                             <div class="pitchers hidden">
-                                <div>{{stats.awayStartingPitcher.athlete.lastName}}</div>
-                                <div>{{stats.homeStartingPitcher.athlete.lastName}}</div>
+                                <p>{{stats.awayStartingPitcher.athlete.lastName}}</p>
+                                <p>{{stats.homeStartingPitcher.athlete.lastName}}</p>
                             </div>
                         </div>
                     {{else}}
@@ -65,15 +67,15 @@
                                         <p>{{this.situation.baseRunnersText}}</p>
                                     </div>
                                     <div class="count">
-                                        <p>Balls: {{this.situation.balls}}</p>
-                                        <p>Strikes: {{this.situation.strikes}}</p>
-                                        <p>Outs: {{this.situation.outs}}</p>
+                                        <p><span class="headline-small">Balls: </span>{{this.situation.balls}}</p>
+                                        <p><span class="headline-small">Strikes: </span>{{this.situation.strikes}}</p>
+                                        <p><span class="headline-small">Outs: </span>{{this.situation.outs}}</p>
                                     </div>
                                 </div>
                             </div>
                         {{else}}
                             <div class="status">
-                                {{this.status.detail}}
+                                <span class="final">{{this.status.detail}}</span>
                             </div>
                             <div class="inner">
                                 <div class="teams">
@@ -81,14 +83,14 @@
                                         <div class="team-ind" data-teamid="{{this.team.id}}">
                                             {{#if this.isWinner}}
                                                 <div class="team-name winner">
-                                                    <a class="team-link winner" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
+                                                    <a class="winner" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
                                                 </div>
                                                 <div>
                                                     <span class="score winner">{{this.score}}</span>
                                                 </div>
                                             {{else}}
                                                 <div class="team-name">
-                                                    <a class="team-link" href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
+                                                    <a href="{{this.team.links.api.teams.href}}" target="_blank">{{this.team.abbreviation}}</a>
                                                 </div>
                                                 <div>
                                                     <span class="score">{{this.score}}</span>
@@ -98,10 +100,19 @@
                                     {{/each}}
                                 </div>
                                 <div class="pitchers">
-                                    <p><span>W:</span> {{this.stats.winningPitcher.athlete.lastName}}</p>
-                                    <p><span>L:</span> {{this.stats.losingPitcher.athlete.lastName}}</p>
+                                    <div>
+                                        <span class="headline-small">W:</span>
+                                        <a href="{{this.stats.winningPitcher.athlete.links.web.href}}" target="_blank"> {{this.stats.winningPitcher.athlete.lastName}}</a>
+                                    </div>
+                                    <div>
+                                        <span class="headline-small">L:</span>
+                                        <a href="{{this.stats.losingPitcher.athlete.links.web.href}}" target="_blank">  {{this.stats.losingPitcher.athlete.lastName}}</a>
+                                    </div>
                                     {{#if this.stats.savingPitcher}}
-                                        <p><span>S:</span> {{this.stats.savingPitcher.athlete.lastName}}</p>
+                                        <div>
+                                            <span class="headline-small">S:</span>
+                                            <a href="{{this.stats.savingPitcher.athlete.links.web.href}}" target="_blank"> {{this.stats.savingPitcher.athlete.lastName}}</a>
+                                        </div>
                                     {{/if}}
                                 </div>
                             </div>

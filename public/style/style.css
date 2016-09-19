@@ -8,6 +8,10 @@
   border: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 #scoreboard {
     max-width: 970px;
     max-height: 66px;
@@ -26,7 +30,7 @@
 
 .competition {
     padding: 0.3em;
-    background-color: #F0F0F0;
+    background-color: #F7F7F7;
     margin: 1px;
     min-width: 115px;
     min-height: 66px;
@@ -43,18 +47,29 @@
     display: flex;
     flex-direction: row;
 }
+
 .status {
     font-size: 0.7em;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.2em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
 }
 
 .in-progress {
     color: green;
+    font-weight: 700;
 }
 
-.scheduled-datetime{
-    font-size: 0.85em;
+.final {
+    font-weight: 700;
     color: black;
+}
+
+.scheduled-datetime {
+    font-size: 0.95em;
+    color: black;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
 }
 
 .teams {
@@ -62,10 +77,8 @@
     flex-flow: column-reverse;
     align-items: center;
     font-size: 0.8em;
-}
-
-.team-link {
-    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
 }
 
 .team-ind {
@@ -84,26 +97,32 @@
     padding-left: 0.25em;
     font-size: 0.70em;
     color: gray;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
 }
 
 .score {
 }
 
 .winner {
-    font-weight: bold;
+    font-weight: 800;
 }
 
 .pitchers {
     display: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 0.65em;
 }
 
 .pitchers p {
     padding: 0;
     margin: 0;
-    border: 0:
+    border: 0;
+
 }
 
-.pitchers span {
+.headline-small {
     color: #8C8C8C;
 }
 
@@ -118,7 +137,6 @@
 .situation p {
     font-size: 0.70em;
     margin: 0;
-
 }
 
 @media all and (max-width: 770px) {
@@ -126,7 +144,6 @@
         display: flex;
         flex-direction: column;
         padding-left: 60px;
-        font-size: 0.70em;
     }
 
     .situation {

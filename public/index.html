@@ -39,9 +39,9 @@
                                     </div>
                                 {{/each}}
                             </div>
-                            <div class="pitchers hidden">
-                                <p>{{stats.awayStartingPitcher.athlete.lastName}}</p>
-                                <p>{{stats.homeStartingPitcher.athlete.lastName}}</p>
+                            <div class="pitchers">
+                                <p><a href="{{stats.awayStartingPitcher.athlete.links.web.href}}" target="_blank">{{stats.awayStartingPitcher.athlete.lastName}}</a></p>
+                                <p><a href="{{stats.homeStartingPitcher.athlete.links.web.href}}" target="_blank">{{stats.homeStartingPitcher.athlete.lastName}}</a></p>
                             </div>
                         </div>
                     {{else}}
@@ -61,16 +61,16 @@
                                     {{/each}}
                                 </div>
                                 <div class="situation">
-                                    <div class="situation-batter-pitcher">
-                                        <p>On the mound: {{this.situation.currentPitcher.shortName}}</p>
-                                        <p>At the plate: {{this.situation.currentBatter.shortName}}</p>
-                                        <p>{{this.situation.baseRunnersText}}</p>
-                                    </div>
                                     <div class="count">
                                         <p><span class="headline-small">Balls: </span>{{this.situation.balls}}</p>
                                         <p><span class="headline-small">Strikes: </span>{{this.situation.strikes}}</p>
                                         <p><span class="headline-small">Outs: </span>{{this.situation.outs}}</p>
                                     </div>
+                                    <!-- <div class="batter-pitcher">
+                                        <p>On the mound: {{this.situation.currentPitcher.shortName}}</p>
+                                        <p>At the plate: {{this.situation.currentBatter.shortName}}</p>
+                                        <p>{{this.situation.baseRunnersText}}</p>
+                                    </div> -->
                                 </div>
                             </div>
                         {{else}}
@@ -101,16 +101,16 @@
                                 </div>
                                 <div class="pitchers">
                                     <div>
-                                        <span class="headline-small">W:</span>
+                                        <span class="headline-small">W: </span>
                                         <a href="{{this.stats.winningPitcher.athlete.links.web.href}}" target="_blank"> {{this.stats.winningPitcher.athlete.lastName}}</a>
                                     </div>
                                     <div>
-                                        <span class="headline-small">L:</span>
+                                        <span class="headline-small">L: </span>
                                         <a href="{{this.stats.losingPitcher.athlete.links.web.href}}" target="_blank">  {{this.stats.losingPitcher.athlete.lastName}}</a>
                                     </div>
                                     {{#if this.stats.savingPitcher}}
                                         <div>
-                                            <span class="headline-small">S:</span>
+                                            <span class="headline-small">S: </span>
                                             <a href="{{this.stats.savingPitcher.athlete.links.web.href}}" target="_blank"> {{this.stats.savingPitcher.athlete.lastName}}</a>
                                         </div>
                                     {{/if}}

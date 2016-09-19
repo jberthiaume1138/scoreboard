@@ -119,36 +119,53 @@ a {
     padding: 0;
     margin: 0;
     border: 0;
-
 }
 
 .headline-small {
-    color: #8C8C8C;
+    color: black;
 }
 
-.situation {
-    display: none;
-}
 
-.situation div {
+
+/*.situation div {
     padding-right: 40px;
-}
+}*/
 
 .situation p {
     font-size: 0.70em;
     margin: 0;
 }
 
+.situation {
+    display: none;
+}
+
 @media all and (max-width: 770px) {
     .pitchers {
         display: flex;
         flex-direction: column;
-        padding-left: 60px;
+        padding-left: 30px;
     }
 
     .situation {
         display: flex;
         flex-flow: row;
-        padding-left: 60px;
+        padding-left: 30px;
+    }
+}
+
+@media all and (max-width: 320px) {
+    .situation {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+    }
+
+    .count {
+        padding-right: 30px;
+    }
+
+    .batter-pitcher {
+        display: none;
     }
 }

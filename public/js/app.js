@@ -45,12 +45,22 @@ $('document').ready(function() {
     board.getData();
 
 
-    $('#scoreboard').on('mouseover','.competition', function() {
-        console.log('hover over competition');
+    // $('#scoreboard').on('mouseover','.competition', function() {
+    //     console.log('hover over competition');
+    // });
 
+    $('.scoreboard').slick({
+        arrows: true,
+        slidesToShow: 8,
+        slidesToScroll: 8,
+        swipe: true,
+        swipeToSlide: true
     });
 
-    // $('#scoreboard').slick({
-    //
-    // });
+    $('.container').slick({
+        arrows: true,
+        slidesToShow: 8,
+        slidesToScroll: 8,
+        swipe: true
+    });
 });

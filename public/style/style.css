@@ -107,11 +107,31 @@
     color: #8C8C8C;
 }
 
+.situation {
+    display: none;
+}
+
+.situation div {
+    padding-right: 40px;
+}
+
+.situation p {
+    font-size: 0.70em;
+    margin: 0;
+
+}
+
 @media all and (max-width: 770px) {
     .pitchers {
         display: flex;
         flex-direction: column;
-        padding-left: 5em;
+        padding-left: 60px;
         font-size: 0.70em;
+    }
+
+    .situation {
+        display: flex;
+        flex-flow: row;
+        padding-left: 60px;
     }
 }

@@ -58,8 +58,17 @@
                                         </div>
                                     {{/each}}
                                 </div>
-                                <div class="game-state">
-
+                                <div class="situation">
+                                    <div class="situation-batter-pitcher">
+                                        <p>On the mound: {{this.situation.currentPitcher.shortName}}</p>
+                                        <p>At the plate: {{this.situation.currentBatter.shortName}}</p>
+                                        <p>{{this.situation.baseRunnersText}}</p>
+                                    </div>
+                                    <div class="count">
+                                        <p>Balls: {{this.situation.balls}}</p>
+                                        <p>Strikes: {{this.situation.strikes}}</p>
+                                        <p>Outs: {{this.situation.outs}}</p>
+                                    </div>
                                 </div>
                             </div>
                         {{else}}

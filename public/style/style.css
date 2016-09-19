@@ -115,3 +115,8 @@
         font-size: 0.70em;
     }
 }
+
+.slick-prev,
+.slick-next {
+    background: gray;
+}

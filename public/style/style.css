@@ -169,3 +169,8 @@ a {
         display: none;
     }
 }
+
+.slick-prev,
+.slick-next {
+    background: gray;
+}

@@ -26,6 +26,29 @@ ScoreBoard.prototype.processData = function(data) {
     var html = template(context);
 
     $('#scoreboard').html(html);
+
+    if ($(window).width() > 770) {
+        $('#scoreboard').slick({
+            slidesToShow: 8,
+            slidesToScroll: 8,
+            swipe: true,
+            arrows: true
+         });
+    }
+
+    $(window).on('resize', function() {
+        if ($(window).width() > 770) {
+            $('#scoreboard').slick({
+                slidesToShow: 8,
+                slidesToScroll: 8,
+                swipe: true,
+                arrows: true
+             });
+        }
+        else {
+            $('#scoreboard').slick('unslick');
+        }
+    });
 };
 
 ScoreBoard.prototype.getData = function() {
@@ -37,9 +60,7 @@ ScoreBoard.prototype.getData = function() {
 };
 
 $('document').ready(function() {
-
     var dataURL = '/data/';
-
     var board = new ScoreBoard(dataURL);
 
     board.getData();

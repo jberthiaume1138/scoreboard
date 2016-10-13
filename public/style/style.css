@@ -121,16 +121,6 @@ a {
     border: 0;
 }
 
-.headline-small {
-    color: black;
-}
-
-
-
-/*.situation div {
-    padding-right: 40px;
-}*/
-
 .situation p {
     font-size: 0.70em;
     margin: 0;
@@ -138,6 +128,15 @@ a {
 
 .situation {
     display: none;
+}
+
+.count {
+    font-weight: 300;
+    color: #555555;
+}
+
+.count-details {
+    padding-left: 0.50em;
 }
 
 @media all and (max-width: 770px) {
@@ -152,6 +151,10 @@ a {
         flex-flow: row;
         padding-left: 30px;
     }
+
+    .count {
+        display: flex;
+    }
 }
 
 @media all and (max-width: 320px) {
@@ -163,6 +166,7 @@ a {
 
     .count {
         padding-right: 30px;
+        display: flex;
     }
 
     .batter-pitcher {

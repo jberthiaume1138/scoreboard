@@ -65,9 +65,16 @@
                                 </div>
                                 <div class="situation">
                                     <div class="count">
-                                        <p><span class="headline-small">Balls: </span>{{this.situation.balls}}</p>
-                                        <p><span class="headline-small">Strikes: </span>{{this.situation.strikes}}</p>
-                                        <p><span class="headline-small">Outs: </span>{{this.situation.outs}}</p>
+                                        <div class="count-headlines">
+                                            <p>Balls: </p>
+                                            <p>Strikes: </p>
+                                            <p>Outs: </p>
+                                        </div>
+                                        <div class="count-details">
+                                            <p>{{this.situation.balls}}</p>
+                                            <p>{{this.situation.strikes}}</p>
+                                            <p>{{this.situation.outs}}</p>
+                                        </div>
                                     </div>
                                     <!-- <div class="batter-pitcher">
                                         <p>On the mound: {{this.situation.currentPitcher.shortName}}</p>

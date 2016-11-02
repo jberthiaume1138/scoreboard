@@ -1,180 +1,139 @@
 *, *:after, *:before {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 .body {
   margin: 0;
   padding: 0;
-  border: 0;
-}
+  border: 0; }
 
 a {
-    text-decoration: none;
-}
+  text-decoration: none; }
 
 #scoreboard {
-    max-width: 970px;
-    max-height: 66px;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    display: flex;
-    flex-flow: row;
-}
+  max-width: 970px;
+  max-height: 66px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-flow: row; }
 
 @media all and (max-width: 770px) {
-    #scoreboard {
-        flex-flow: column;
-    }
-}
+  #scoreboard {
+    flex-flow: column; } }
 
 .competition {
-    padding: 0.3em;
-    background-color: #F7F7F7;
-    margin: 1px;
-    min-width: 115px;
-    min-height: 66px;
-}
+  padding: 0.3em;
+  background-color: #F7F7F7;
+  margin: 1px;
+  min-width: 115px;
+  min-height: 66px; }
 
 @media all and (max-width: 770px) {
-    #scoreboard {
-        width: 100%;
-        padding: 0 0.35em;
-    }
-}
+  #scoreboard {
+    width: 100%;
+    padding: 0 0.35em; } }
 
 .inner {
-    display: flex;
-    flex-direction: row;
-}
+  display: flex;
+  flex-direction: row; }
 
 .status {
-    font-size: 0.7em;
-    padding-bottom: 0.2em;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: 300;
-}
+  font-size: 0.7em;
+  padding-bottom: 0.2em;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 300; }
 
 .in-progress {
-    color: green;
-    font-weight: 700;
-}
+  color: green;
+  font-weight: 700; }
 
 .final {
-    font-weight: 700;
-    color: black;
-}
+  font-weight: 700;
+  color: black; }
 
 .scheduled-datetime {
-    font-size: 0.95em;
-    color: black;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: 300;
-}
+  font-size: 0.95em;
+  color: black;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300; }
 
 .teams {
-    display: flex;
-    flex-flow: column-reverse;
-    align-items: center;
-    font-size: 0.8em;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-}
+  display: flex;
+  flex-flow: column-reverse;
+  align-items: center;
+  font-size: 0.8em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500; }
 
 .team-ind {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
 
 .team-name {
-    padding-right: 1em;
-    width: 90px;
-    margin-right: auto;
-}
+  padding-right: 1em;
+  width: 90px;
+  margin-right: auto; }
 
 .record {
-    padding-left: 0.25em;
-    font-size: 0.70em;
-    color: gray;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: 700;
-}
-
-.score {
-}
+  padding-left: 0.25em;
+  font-size: 0.70em;
+  color: gray;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700; }
 
 .winner {
-    font-weight: 800;
-}
+  font-weight: 800; }
 
 .pitchers {
-    display: none;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-    font-size: 0.65em;
-}
+  display: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 0.65em; }
 
 .pitchers p {
-    padding: 0;
-    margin: 0;
-    border: 0;
-}
+  padding: 0;
+  margin: 0;
+  border: 0; }
 
 .situation p {
-    font-size: 0.70em;
-    margin: 0;
-}
+  font-size: 0.70em;
+  margin: 0; }
 
 .situation {
-    display: none;
-}
+  display: none; }
 
 .count {
-    font-weight: 300;
-    color: #555555;
-}
+  font-weight: 300;
+  color: #555555; }
 
 .count-details {
-    padding-left: 0.50em;
-}
+  padding-left: 0.50em; }
 
 @media all and (max-width: 770px) {
-    .pitchers {
-        display: flex;
-        flex-direction: column;
-        padding-left: 30px;
-    }
-
-    .situation {
-        display: flex;
-        flex-flow: row;
-        padding-left: 30px;
-    }
-
-    .count {
-        display: flex;
-    }
-}
+  .pitchers {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px; }
+  .situation {
+    display: flex;
+    flex-flow: row;
+    padding-left: 30px; }
+  .count {
+    display: flex; } }
 
 @media all and (max-width: 320px) {
-    .situation {
-        display: flex;
-        flex-flow: row;
-        justify-content: center;
-    }
-
-    .count {
-        padding-right: 30px;
-        display: flex;
-    }
-
-    .batter-pitcher {
-        display: none;
-    }
-}
+  .situation {
+    display: flex;
+    flex-flow: row;
+    justify-content: center; }
+  .count {
+    padding-right: 30px;
+    display: flex; }
+  .batter-pitcher {
+    display: none; } }
 
 .slick-prev,
 .slick-next {
-    background: gray;
-}
+  background: gray; }

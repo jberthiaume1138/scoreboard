@@ -50,6 +50,7 @@ $fonts: 'Open Sans Condensed', sans-serif;
     flex-direction: row;
 }
 
+
 .status {
     font-size: 0.7em;
     padding-bottom: 0.2em;
@@ -70,7 +71,7 @@ $fonts: 'Open Sans Condensed', sans-serif;
 .scheduled-datetime {
     font-size: 0.95em;
     color: black;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: $fonts;
     font-weight: 300;
 }
 
@@ -99,7 +100,7 @@ $fonts: 'Open Sans Condensed', sans-serif;
     padding-left: 0.25em;
     font-size: 0.70em;
     color: gray;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: $fonts;
     font-weight: 700;
 }
 

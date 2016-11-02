@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var util = require('util');
 
 var app = express();
 
@@ -18,5 +19,5 @@ app.get('/', function(req, res) {
 
 var port = process.env.PORT || 8080;
 app.listen(port, function(){
-    console.log('Listening on ' + port);
+    util.log('..... Listening on port:  ' + port + ' .....');
 });
